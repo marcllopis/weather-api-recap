@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 
-const apiUrlBarcelona =
-  "https://api.openweathermap.org/data/2.5/weather?q=Barcelona&units=metric&appid=4c28746bdba2dff0e79219c825e7039a";
-const apiUrlBerlin =
-  "https://api.openweathermap.org/data/2.5/weather?q=Berlin&units=metric&appid=4c28746bdba2dff0e79219c825e7039a";
+console.log(process.env);
+
+const apiUrlBarcelona = `https://api.openweathermap.org/data/2.5/weather?q=Barcelona&units=metric&appid=${process.env.REACT_APP_APIKEY}`;
+const apiUrlBerlin = `https://api.openweathermap.org/data/2.5/weather?q=Berlin&units=metric&appid=${process.env.REACT_APP_APIKEY}`;
 
 function App() {
   let [weather, setWeather] = useState({});
